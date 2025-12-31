@@ -1,1 +1,1 @@
-Updated content for S3 module to remediate encryption and public access issues.
+Add or update the configuration in the main.tf file of the S3 module to enable AES256 or KMS encryption on the affected buckets, block all forms of public access at the bucket level, and adjust module variables or resources accordingly for the listed buckets. Ensure that the bucket policies do not contain statements allowing external principals. Once the changes are made, generate a remediation patch and create a Pull Request for review in the 'remediate-kan-1' branch.
