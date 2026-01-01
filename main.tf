@@ -58,9 +58,9 @@ module "s3" {
   buckets = [
     {
       name       = "poc-unencrypted-public-1"
-      encrypted  = false
-      versioning = false
-      public     = true
+      encrypted  = true
+      versioning = true
+      public     = false
     },
     {
       name       = "poc-no-versioning-2"
@@ -72,7 +72,7 @@ module "s3" {
       name       = "poc-public-access-3"
       encrypted  = true
       versioning = true
-      public     = true
+      public     = false
     },
     {
       name       = "poc-compliant-4"
