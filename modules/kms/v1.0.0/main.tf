@@ -9,7 +9,7 @@ variable "kms_keys" {
 resource "aws_kms_key" "this" {
   for_each = { for k in var.kms_keys : k.alias => k }
 
-  description        = each.value.key_description
+  description         = each.value.key_description
   enable_key_rotation = each.value.enable_rotation
 }
 
