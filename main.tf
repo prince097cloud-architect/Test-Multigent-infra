@@ -57,31 +57,31 @@ module "s3" {
 
   buckets = [
     {
-      name       = "poc-unencrypted-public-1"
+      name       = "aurora-data-vault-logs"
       encrypted  = false
       versioning = false
       public     = true
     },
     {
-      name       = "poc-no-versioning-2"
+      name       = "cloudforge-artifacts-dev"
       encrypted  = true
       versioning = false
       public     = false
     },
     {
-      name       = "poc-public-access-3"
+      name       = "nimbus-secure-backups-01"
       encrypted  = true
       versioning = true
       public     = true
     },
     {
-      name       = "poc-compliant-4"
+      name       = "atlas-terraform-state-store"
       encrypted  = true
       versioning = true
       public     = false
     },
     {
-      name       = "poc-compliant-5"
+      name       = "sentinel-audit-trail-bucket"
       encrypted  = true
       versioning = true
       public     = false
@@ -98,12 +98,12 @@ module "kms" {
 
   kms_keys = [
     {
-      alias           = "poc-kms-no-rotation-1"
+      alias           = "poc-kms-1"
       enable_rotation = false
       key_description = "Key rotation disabled"
     },
     {
-      alias           = "poc-kms-rotation-2"
+      alias           = "poc-kms-2"
       enable_rotation = true
       key_description = "Compliant key"
     }
@@ -119,17 +119,17 @@ module "ec2" {
 
   instances = [
     {
-      name          = "poc-ec2-idle-dev-1"
+      name          = "poc-ec2-dev-1"
       instance_type = "t3.micro"
       environment   = "dev"
     },
     {
-      name          = "poc-ec2-idle-prod-2"
+      name          = "poc-ec2-dev-2"
       instance_type = "t3.micro"
       environment   = "prod"
     },
     {
-      name          = "poc-ec2-active-3"
+      name          = "poc-ec2-dev-3"
       instance_type = "t3.micro"
       environment   = "dev"
     }
