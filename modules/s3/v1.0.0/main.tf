@@ -40,9 +40,9 @@ resource "aws_s3_bucket_public_access_block" "public" {
 
   bucket = aws_s3_bucket.this[each.key].id
 
-  block_public_acls   = each.value.public ? false : true
-  block_public_policy = each.value.public ? false : true
-  ignore_public_acls  = each.value.public ? false : true
+  block_public_acls       = each.value.public ? false : true
+  block_public_policy     = each.value.public ? false : true
+  ignore_public_acls      = each.value.public ? false : true
   restrict_public_buckets = each.value.public ? false : true
 }
 
