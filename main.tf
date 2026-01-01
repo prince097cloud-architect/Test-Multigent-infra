@@ -58,21 +58,21 @@ module "s3" {
   buckets = [
     {
       name       = "aurora-data-vault-logs"
-      encrypted  = false
-      versioning = false
-      public     = true
+      encrypted  = true
+      versioning = true
+      public     = false
     },
     {
       name       = "cloudforge-artifacts-dev"
       encrypted  = true
-      versioning = false
+      versioning = true
       public     = false
     },
     {
       name       = "nimbus-secure-backups-01"
       encrypted  = true
       versioning = true
-      public     = true
+      public     = false
     },
     {
       name       = "atlas-terraform-state-store"
